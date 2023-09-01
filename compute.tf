@@ -1,14 +1,3 @@
-# see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/ssh_public_key
-resource "azurerm_ssh_public_key" "main" {
-  name                = local.resource_name
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-
-  public_key = var.ssh_public_key
-
-  tags = var.tags
-}
-
 # see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set
 resource "azurerm_linux_virtual_machine_scale_set" "main" {
   name                = local.resource_name
@@ -60,13 +49,13 @@ resource "azurerm_linux_virtual_machine_scale_set" "main" {
   instances = var.vmss_instances
 
   network_interface {
-    name                          = "nic"
-    primary                       = true
-    enable_accelerated_networking = false
+    name                          = var.vmms_network_interface.name
+    primary                       = var.vmms_network_interface.primary
+    enable_accelerated_networking = var.vmms_network_interface.enable_accelerated_networking
 
     ip_configuration {
-      name      = var.vmss_ip_configuration_name
-      primary   = true
+      name      = var.vmss_ip_configuration.name
+      primary   = var.vmss_ip_configuration.primary
       subnet_id = azurerm_subnet.main.id
 
       public_ip_address {

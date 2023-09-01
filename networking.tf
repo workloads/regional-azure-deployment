@@ -88,7 +88,7 @@ resource "azurerm_lb_probe" "main" {
 
   interval_in_seconds = each.value.interval
   loadbalancer_id     = azurerm_lb.main.id
-  name                = "${each.value.name}-probe"
+  name                = each.value.name
   port                = each.value.backend_port
   protocol            = each.value.protocol
 }

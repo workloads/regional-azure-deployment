@@ -27,13 +27,13 @@ variable "ip_address_version" {
 variable "load_balancer_backend_address_pool_name" {
   type        = string
   description = "Name of Load Balancer Backend Address Pool"
-  default     = "BackEndAddressPool"
+  default     = "backendpool"
 }
 
 variable "load_balancer_frontend_ip_name" {
   type        = string
   description = "Name of the Frontend IP Address of Load Balancer Resources."
-  default     = "PublicIPAddress"
+  default     = "publicip"
 }
 
 variable "load_balancer_rules" {
@@ -219,10 +219,33 @@ variable "vmss_instances" {
   default     = 0
 }
 
-variable "vmss_ip_configuration_name" {
-  type        = string
-  description = "Name of IP Configuration for VM Scale Set Instance(s)."
-  default     = "ipconfig"
+variable "vmss_ip_configuration" {
+  type = object({
+    name    = string
+    primary = bool
+  })
+
+  description = "IP Configuration of VM Scale Set Instance(s)."
+  default = {
+    name    = "ipconfig"
+    primary = true
+  }
+}
+
+variable "vmms_network_interface" {
+  type = object({
+    name                          = string
+    primary                       = bool
+    enable_accelerated_networking = bool
+  })
+
+  description = "Configuration of Network Interface for VM Scale Set Instance(s)."
+
+  default = {
+    name                          = "nic"
+    primary                       = true
+    enable_accelerated_networking = false
+  }
 }
 
 variable "vmss_os_disk_caching" {
@@ -266,7 +289,7 @@ variable "vmss_public_ip_idle_timeout" {
 variable "vmss_public_ip_name" {
   type        = string
   description = "Name of Public IP Addresses for VM Scale Set Instance(s)."
-  default     = "publicipadress"
+  default     = "publicip"
 }
 
 # see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set#upgrade_mode

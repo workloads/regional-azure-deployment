@@ -64,13 +64,14 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | storage_account_replication_type | Replication Type of Storage Account for Boot Diagnostics. | `string` | no |
 | storage_account_tier | Tier of Storage Account for Boot Diagnostics. | `string` | no |
 | subscription_id | Identifier of Azure Subscription. | `string` | no |
+| vmms_network_interface | Configuration of Network Interface for VM Scale Set Instance(s). | <pre>object({<br>    name                          = string<br>    primary                       = bool<br>    enable_accelerated_networking = bool<br>  })</pre> | no |
 | vmss_additional_caps_ultra_ssd_enabled | Toggle to enable Ultra SSD Support (additional capability) for VM Scale Set Instance(s). | `bool` | no |
 | vmss_disable_password_authentication | Toggle to Disable Password Authentication of VM Scale Set Instance(s). | `bool` | no |
 | vmss_do_not_run_extensions_on_overprovisioned_machines | Toggle to Prevent running of Extensions on Overprovisioned Machines for VM Scale Set Instance(s). | `bool` | no |
 | vmss_eviction_policy | Eviction Policy of VM Scale Set Instance(s). | `string` | no |
 | vmss_instance_repair | Automatic Repair Grace Period of VM Scale Set Instance(s). | <pre>object({<br>    enabled      = bool<br>    grace_period = string<br>  })</pre> | no |
 | vmss_instances | Count of VM Scale Set Instance(s). | `number` | no |
-| vmss_ip_configuration_name | Name of IP Configuration for VM Scale Set Instance(s). | `string` | no |
+| vmss_ip_configuration | IP Configuration of VM Scale Set Instance(s). | <pre>object({<br>    name                          = string<br>    primary                       = bool<br>  })</pre> | no |
 | vmss_os_disk_caching | Caching Mode of OS Disk for VM Scale Set Instance(s). | `string` | no |
 | vmss_os_disk_storage_account_type | Storage Account Type of OS Disk for VM Scale Set Instance(s). | `string` | no |
 | vmss_overprovision | Toggle to enable Overprovisioning of VM Scale Set Instance(s). | `bool` | no |
