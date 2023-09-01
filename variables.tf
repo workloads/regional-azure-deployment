@@ -176,25 +176,25 @@ variable "vmss_automatic_os_upgrade_policy" {
     enable_automatic_os_upgrade = bool
   })
 
-  description = "Source Image Reference of VM Scale Set Instance(s)"
+  description = "Source Image Reference of VM Scale Set Instance(s)."
 }
 
 variable "vmss_disable_password_authentication" {
   type        = bool
-  description = "Toggle to Disable Password Authentication of VM Scale Set Instance(s)"
+  description = "Toggle to Disable Password Authentication of VM Scale Set Instance(s)."
   default     = true
 }
 
 # see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set#do_not_run_extensions_on_overprovisioned_machines
 variable "vmss_do_not_run_extensions_on_overprovisioned_machines" {
   type        = bool
-  description = "Toggle to Prevent running of Extensions on Overprovisioned Machines for VM Scale Set Instance(s)"
+  description = "Toggle to Prevent running of Extensions on Overprovisioned Machines for VM Scale Set Instance(s)."
   default     = true
 }
 
 variable "vmss_eviction_policy" {
   type        = string
-  description = "Eviction Policy of VM Scale Set Instance(s)"
+  description = "Eviction Policy of VM Scale Set Instance(s)."
   default     = "Delete"
 }
 
@@ -206,7 +206,7 @@ variable "vmss_instance_repair" {
     grace_period = string
   })
 
-  description = "Automatic Repair Grace Period of VM Scale Set Instance(s)"
+  description = "Automatic Repair Grace Period of VM Scale Set Instance(s)."
   default = {
     enabled      = true
     grace_period = "PT30M"
@@ -221,19 +221,19 @@ variable "vmss_instances" {
 
 variable "vmss_ip_configuration_name" {
   type        = string
-  description = "Name of IP Configuration for VM Scale Set Instance(s)"
+  description = "Name of IP Configuration for VM Scale Set Instance(s)."
   default     = "ipconfig"
 }
 
 variable "vmss_os_disk_caching" {
   type        = string
-  description = "Caching Mode of OS Disk for VM Scale Set Instance(s)"
+  description = "Caching Mode of OS Disk for VM Scale Set Instance(s)."
   default     = "ReadWrite"
 }
 
 variable "vmss_os_disk_storage_account_type" {
   type        = string
-  description = "Storage Account Type of OS Disk for VM Scale Set Instance(s)"
+  description = "Storage Account Type of OS Disk for VM Scale Set Instance(s)."
   default     = "Standard_LRS"
 }
 
@@ -241,31 +241,31 @@ variable "vmss_os_disk_storage_account_type" {
 # see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set#overprovision
 variable "vmss_overprovision" {
   type        = bool
-  description = "Toggle to enable Overprovisioning of VM Scale Set Instance(s)"
+  description = "Toggle to enable Overprovisioning of VM Scale Set Instance(s)."
   default     = true
 }
 
 variable "vmss_priority" {
   type        = string
-  description = "Priority of VM Scale Set Instance(s)"
+  description = "Priority of VM Scale Set Instance(s)."
   default     = "Spot"
 }
 
 variable "vmss_provision_vm_agent" {
   type        = bool
-  description = "Toggle to enable Provisioning of VM Agent for VM Scale Set Instance(s)"
+  description = "Toggle to enable Provisioning of VM Agent for VM Scale Set Instance(s)."
   default     = true
 }
 
 variable "vmss_public_ip_idle_timeout" {
   type        = number
-  description = "Idle Timeout of Public IP Addresses for VM Scale Set Instance(s)"
+  description = "Idle Timeout of Public IP Addresses for VM Scale Set Instance(s."
   default     = 30
 }
 
 variable "vmss_public_ip_name" {
   type        = string
-  description = "Name of Public IP Addresses for VM Scale Set Instance(s)"
+  description = "Name of Public IP Addresses for VM Scale Set Instance(s)."
   default     = "publicipadress"
 }
 
@@ -280,7 +280,7 @@ variable "vmss_rolling_upgrade_policy" {
     prioritize_unhealthy_instances_enabled  = bool
   })
 
-  description = "Source Image Reference of VM Scale Set Instance(s)"
+  description = "Source Image Reference of VM Scale Set Instance(s)."
 }
 
 variable "vmss_sku" {
@@ -297,7 +297,7 @@ variable "vmss_source_image_reference" {
     version   = string
   })
 
-  description = "Source Image Reference of VM Scale Set Instance(s)"
+  description = "Source Image Reference of VM Scale Set Instance(s)."
 }
 
 variable "vmss_termination_notification" {
@@ -316,7 +316,7 @@ variable "vmss_termination_notification" {
 # see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set#upgrade_mode
 variable "vmss_upgrade_mode" {
   type        = string
-  description = "Upgrade Mode of VM Scale Set Instance(s)"
+  description = "Upgrade Mode of VM Scale Set Instance(s)."
   default     = "Rolling"
 }
 

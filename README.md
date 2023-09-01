@@ -43,10 +43,10 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | tenant_id | Identifier of Azure Tenant. | `string` | yes |
 | tfe_organization | Name of Terraform Cloud Organization. | `string` | yes |
 | tfe_workspace | Name of Terraform Cloud Workspace. | `string` | yes |
-| vmss_automatic_os_upgrade_policy | Source Image Reference of VM Scale Set Instance(s) | <pre>object({<br>    disable_automatic_rollback  = bool<br>    enable_automatic_os_upgrade = bool<br>  })</pre> | yes |
-| vmss_rolling_upgrade_policy | Source Image Reference of VM Scale Set Instance(s) | <pre>object({<br>    cross_zone_upgrades_enabled             = bool<br>    max_batch_instance_percent              = number<br>    max_unhealthy_instance_percent          = number<br>    max_unhealthy_upgraded_instance_percent = number<br>    pause_time_between_batches              = string<br>    prioritize_unhealthy_instances_enabled  = bool<br>  })</pre> | yes |
+| vmss_automatic_os_upgrade_policy | Source Image Reference of VM Scale Set Instance(s). | <pre>object({<br>    disable_automatic_rollback  = bool<br>    enable_automatic_os_upgrade = bool<br>  })</pre> | yes |
+| vmss_rolling_upgrade_policy | Source Image Reference of VM Scale Set Instance(s). | <pre>object({<br>    cross_zone_upgrades_enabled             = bool<br>    max_batch_instance_percent              = number<br>    max_unhealthy_instance_percent          = number<br>    max_unhealthy_upgraded_instance_percent = number<br>    pause_time_between_batches              = string<br>    prioritize_unhealthy_instances_enabled  = bool<br>  })</pre> | yes |
 | vmss_sku | SKU of VM Scale Set Instance(s). | `string` | yes |
-| vmss_source_image_reference | Source Image Reference of VM Scale Set Instance(s) | <pre>object({<br>    offer     = string<br>    publisher = string<br>    sku       = string<br>    version   = string<br>  })</pre> | yes |
+| vmss_source_image_reference | Source Image Reference of VM Scale Set Instance(s). | <pre>object({<br>    offer     = string<br>    publisher = string<br>    sku       = string<br>    version   = string<br>  })</pre> | yes |
 | vmss_user_data | User Data of VM Scale Set Instance(s). | `string` | yes |
 | vmss_username | Username of VM Scale Set Instance(s). | `string` | yes |
 | ip_address_allocation_method | Allocation Method of Public IP Addresses. | `string` | no |
@@ -65,21 +65,21 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | storage_account_tier | Tier of Storage Account for Boot Diagnostics. | `string` | no |
 | subscription_id | Identifier of Azure Subscription. | `string` | no |
 | vmss_additional_caps_ultra_ssd_enabled | Toggle to enable Ultra SSD Support (additional capability) for VM Scale Set Instance(s). | `bool` | no |
-| vmss_disable_password_authentication | Toggle to Disable Password Authentication of VM Scale Set Instance(s) | `bool` | no |
-| vmss_do_not_run_extensions_on_overprovisioned_machines | Toggle to Prevent running of Extensions on Overprovisioned Machines for VM Scale Set Instance(s) | `bool` | no |
-| vmss_eviction_policy | Eviction Policy of VM Scale Set Instance(s) | `string` | no |
-| vmss_instance_repair | Automatic Repair Grace Period of VM Scale Set Instance(s) | <pre>object({<br>    enabled      = bool<br>    grace_period = string<br>  })</pre> | no |
+| vmss_disable_password_authentication | Toggle to Disable Password Authentication of VM Scale Set Instance(s). | `bool` | no |
+| vmss_do_not_run_extensions_on_overprovisioned_machines | Toggle to Prevent running of Extensions on Overprovisioned Machines for VM Scale Set Instance(s). | `bool` | no |
+| vmss_eviction_policy | Eviction Policy of VM Scale Set Instance(s). | `string` | no |
+| vmss_instance_repair | Automatic Repair Grace Period of VM Scale Set Instance(s). | <pre>object({<br>    enabled      = bool<br>    grace_period = string<br>  })</pre> | no |
 | vmss_instances | Count of VM Scale Set Instance(s). | `number` | no |
-| vmss_ip_configuration_name | Name of IP Configuration for VM Scale Set Instance(s) | `string` | no |
-| vmss_os_disk_caching | Caching Mode of OS Disk for VM Scale Set Instance(s) | `string` | no |
-| vmss_os_disk_storage_account_type | Storage Account Type of OS Disk for VM Scale Set Instance(s) | `string` | no |
-| vmss_overprovision | Toggle to enable Overprovisioning of VM Scale Set Instance(s) | `bool` | no |
-| vmss_priority | Priority of VM Scale Set Instance(s) | `string` | no |
-| vmss_provision_vm_agent | Toggle to enable Provisioning of VM Agent for VM Scale Set Instance(s) | `bool` | no |
-| vmss_public_ip_idle_timeout | Idle Timeout of Public IP Addresses for VM Scale Set Instance(s) | `number` | no |
-| vmss_public_ip_name | Name of Public IP Addresses for VM Scale Set Instance(s) | `string` | no |
+| vmss_ip_configuration_name | Name of IP Configuration for VM Scale Set Instance(s). | `string` | no |
+| vmss_os_disk_caching | Caching Mode of OS Disk for VM Scale Set Instance(s). | `string` | no |
+| vmss_os_disk_storage_account_type | Storage Account Type of OS Disk for VM Scale Set Instance(s). | `string` | no |
+| vmss_overprovision | Toggle to enable Overprovisioning of VM Scale Set Instance(s). | `bool` | no |
+| vmss_priority | Priority of VM Scale Set Instance(s). | `string` | no |
+| vmss_provision_vm_agent | Toggle to enable Provisioning of VM Agent for VM Scale Set Instance(s). | `bool` | no |
+| vmss_public_ip_idle_timeout | Idle Timeout of Public IP Addresses for VM Scale Set Instance(s. | `number` | no |
+| vmss_public_ip_name | Name of Public IP Addresses for VM Scale Set Instance(s). | `string` | no |
 | vmss_termination_notification | Termination Notification of VM Scale Set Instance(s). | <pre>object({<br>    enabled = bool<br>    timeout = string<br>  })</pre> | no |
-| vmss_upgrade_mode | Upgrade Mode of VM Scale Set Instance(s) | `string` | no |
+| vmss_upgrade_mode | Upgrade Mode of VM Scale Set Instance(s). | `string` | no |
 
 ### Outputs
 

@@ -16,6 +16,8 @@ output "azurerm_lb_probe" {
 output "azurerm_linux_virtual_machine_scale_set" {
   description = "Exported Attributes for `azurerm_linux_virtual_machine_scale_set.main`."
   value       = azurerm_linux_virtual_machine_scale_set.main
+  sensitive   = true
+}
 }
 
 output "azurerm_network_security_group" {
@@ -36,6 +38,7 @@ output "azurerm_resource_group" {
 output "azurerm_storage_account" {
   description = "Exported Attributes for `azurerm_storage_account`."
   value       = azurerm_storage_account.main
+  sensitive   = true
 }
 
 output "azurerm_subnet" {
