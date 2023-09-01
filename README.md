@@ -49,6 +49,10 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | vmss_source_image_reference | Source Image Reference of VM Scale Set Instance(s). | <pre>object({<br>    offer     = string<br>    publisher = string<br>    sku       = string<br>    version   = string<br>  })</pre> | yes |
 | vmss_user_data | User Data of VM Scale Set Instance(s). | `string` | yes |
 | vmss_username | Username of VM Scale Set Instance(s). | `string` | yes |
+| autoscaling_enabled | Toggle to enable Autoscaling of VM Scale Set Instance(s). | `bool` | no |
+| autoscaling_name | Name of Autoscaling Monitor. | `string` | no |
+| autoscaling_profiles | Configuration of Autoscaling Profile(s). | <pre>list(object({<br>    name = string<br><br>    capacity = object({<br>      default = number<br>      minimum = number<br>      maximum = number<br>    })<br>  }))</pre> | no |
+| autoscaling_rules | Configuration of Autoscaling Rule(s). | <pre>list(object({<br>    name             = string<br>    operator         = string<br>    statistic        = string<br>    threshold        = number<br>    time_aggregation = string<br>    time_window      = string<br>    time_grain       = string<br><br>    scale_action = object({<br>      cooldown  = string<br>      direction = string<br>      type      = string<br>      value     = string<br>    })<br>  }))</pre> | no |
 | ip_address_allocation_method | Allocation Method of Public IP Addresses. | `string` | no |
 | ip_address_sku | SKU of Public IP Addresses. | `string` | no |
 | ip_address_sku_tier | SKU Tier of Public IP Addresses. | `string` | no |
@@ -90,6 +94,7 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | azurerm_lb_backend_address_pool | Exported Attributes for `azurerm_lb_backend_address_pool.main`. |
 | azurerm_lb_probe | Exported Attributes for `azurerm_lb_probe.main`. |
 | azurerm_linux_virtual_machine_scale_set | Exported Attributes for `azurerm_linux_virtual_machine_scale_set.main`. |
+| azurerm_monitor_autoscale_setting | Exported Attributes for `azurerm_monitor_autoscale_setting.main`. |
 | azurerm_network_security_group | Exported Attributes for `azurerm_network_security_group.main`. |
 | azurerm_public_ip | Exported Attributes for `azurerm_public_ip.main`. |
 | azurerm_resource_group | Exported Attributes for `azurerm_resource_group`. |

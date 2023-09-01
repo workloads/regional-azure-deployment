@@ -18,6 +18,10 @@ output "azurerm_linux_virtual_machine_scale_set" {
   value       = azurerm_linux_virtual_machine_scale_set.main
   sensitive   = true
 }
+
+output "azurerm_monitor_autoscale_setting" {
+  description = "Exported Attributes for ``azurerm_monitor_autoscale_setting.main`."
+  value       = azurerm_monitor_autoscale_setting.main
 }
 
 output "azurerm_network_security_group" {

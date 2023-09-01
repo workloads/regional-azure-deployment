@@ -1,3 +1,81 @@
+variable "autoscaling_enabled" {
+  type        = bool
+  description = "Toggle to enable Autoscaling of VM Scale Set Instance(s)."
+  default     = true
+}
+
+variable "autoscaling_name" {
+  type        = string
+  description = "Name of Autoscaling Monitor."
+  default     = "autoscale"
+}
+
+# see https://registry.terraform.io/providers/hashicorp/Azurerm/latest/docs/resources/monitor_autoscale_setting#profile
+variable "autoscaling_profiles" {
+  type = list(object({
+    name = string
+
+    capacity = object({
+      default = number
+      minimum = number
+      maximum = number
+    })
+  }))
+
+  description = "Configuration of Autoscaling Profile(s)."
+
+  default = [{
+    name = "autoscale"
+
+    capacity = {
+      default = 2
+      minimum = 1
+      maximum = 3
+    }
+  }]
+}
+
+# see https://registry.terraform.io/providers/hashicorp/Azurerm/latest/docs/resources/monitor_autoscale_setting#rule
+variable "autoscaling_rules" {
+  type = list(object({
+    name             = string
+    operator         = string
+    statistic        = string
+    threshold        = number
+    time_aggregation = string
+    time_window      = string
+    time_grain       = string
+
+    scale_action = object({
+      cooldown  = string
+      direction = string
+      type      = string
+      value     = string
+    })
+  }))
+
+  description = "Configuration of Autoscaling Rule(s)."
+
+  default = [{
+    # see https://registry.terraform.io/providers/hashicorp/Azurerm/latest/docs/resources/monitor_autoscale_setting#metric_trigger
+    name             = "Percentage CPU"
+    operator         = "LessThan"
+    statistic        = "Average"
+    threshold        = 10
+    time_aggregation = "Average"
+    time_grain       = "PT1M"
+    time_window      = "PT2M"
+
+    # see https://registry.terraform.io/providers/hashicorp/Azurerm/latest/docs/resources/monitor_autoscale_setting#scale_action
+    scale_action = {
+      cooldown  = "PT1M"
+      direction = "Decrease"
+      type      = "ChangeCount"
+      value     = "1"
+    }
+  }]
+}
+
 # `Dynamic` allocated IP Addresses are only known once Azure assigns them to a resource
 # Comparatively, `Static` IP Addresses are known early, making it possible to pre-configure DNS records.
 variable "ip_address_allocation_method" {
