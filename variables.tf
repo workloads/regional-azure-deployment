@@ -126,7 +126,7 @@ variable "load_balancer_rules" {
   description = "List of Rules for Load Balancer."
 
   default = {
-    # ⚠️ `health` is a magic name that is used to trigger certain logic inside `compute.tf`
+    # ⚠️ `health` is a magic name that's used to trigger certain logic inside `compute.tf`
     health = {
       backend_port  = 22
       frontend_port = 22
@@ -165,7 +165,7 @@ variable "location" {
 # see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network#address_space
 variable "network_address_space" {
   type        = list(string)
-  description = "List of CIDRs for Network Adresss Space."
+  description = "List of CIDRs for Network Address Space."
 }
 
 # see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network#dns_servers
@@ -266,7 +266,7 @@ variable "vmss_disable_password_authentication" {
 # see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set#do_not_run_extensions_on_overprovisioned_machines
 variable "vmss_do_not_run_extensions_on_overprovisioned_machines" {
   type        = bool
-  description = "Toggle to Prevent running of Extensions on Overprovisioned Machines for VM Scale Set Instances."
+  description = "Toggle to Prevent running of Extensions on over-provisioned VMs for VM Scale Set Instances."
   default     = true
 }
 
@@ -338,11 +338,11 @@ variable "vmss_os_disk_storage_account_type" {
   default     = "Standard_LRS"
 }
 
-# allow for overprovisioning, as the instances do not count against quotas and are not billed
+# allow for over-provisioning, as the VMs do not count against quotas and aren't billed
 # see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set#overprovision
 variable "vmss_overprovision" {
   type        = bool
-  description = "Toggle to enable Overprovisioning of VM Scale Set Instances."
+  description = "Toggle to enable over-provisioning of VM Scale Set VMs."
   default     = true
 }
 
