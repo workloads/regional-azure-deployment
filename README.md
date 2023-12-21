@@ -1,6 +1,6 @@
 # Regional Azure-specific Resources
 
-> This directory manages the lifecycle of regional, Azure-specific resources for [@workloads](https://github.com/workloads).
+> This repository manages regional, Azure-specific resources for [@workloads](https://github.com/workloads).
 
 ## Table of Contents
 
@@ -8,6 +8,7 @@
 * [Regional Azure-specific Resources](#regional-azure-specific-resources)
   * [Table of Contents](#table-of-contents)
   * [Requirements](#requirements)
+    * [Development](#development)
   * [Usage](#usage)
     * [Inputs](#inputs)
     * [Outputs](#outputs)
