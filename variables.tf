@@ -360,7 +360,7 @@ variable "vmss_provision_vm_agent" {
 
 variable "vmss_public_ip_idle_timeout" {
   type        = number
-  description = "Idle Timeout of Public IP Addresses for VM Scale Set Instance(s."
+  description = "Idle Timeout of Public IP Addresses for VM Scale Set Instances."
   default     = 30
 }
 
