@@ -48,8 +48,8 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | subnet_address_prefixes | List of Address Prefixes for Subnet. | `list(string)` | yes |
 | tags | Tags of (supported) Resources. | `map(string)` | yes |
 | tenant_id | Identifier of Azure Tenant. | `string` | yes |
-| tfe_organization | Name of Terraform Cloud Organization. | `string` | yes |
-| tfe_workspace | Name of Terraform Cloud Workspace. | `string` | yes |
+| tfe_organization | Name of HCP Terraform Organization. | `string` | yes |
+| tfe_workspace | Name of HCP Terraform Workspace. | `string` | yes |
 | vmss_automatic_os_upgrade_policy | Source Image Reference of VM Scale Set Instances. | <pre>object({<br>    disable_automatic_rollback  = bool<br>    enable_automatic_os_upgrade = bool<br>  })</pre> | yes |
 | vmss_rolling_upgrade_policy | Source Image Reference of VM Scale Set Instances. | <pre>object({<br>    cross_zone_upgrades_enabled             = bool<br>    max_batch_instance_percent              = number<br>    max_unhealthy_instance_percent          = number<br>    max_unhealthy_upgraded_instance_percent = number<br>    pause_time_between_batches              = string<br>    prioritize_unhealthy_instances_enabled  = bool<br>  })</pre> | yes |
 | vmss_sku | SKU of VM Scale Set Instances. | `string` | yes |

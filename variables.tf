@@ -233,12 +233,12 @@ variable "tenant_id" {
 
 variable "tfe_organization" {
   type        = string
-  description = "Name of Terraform Cloud Organization."
+  description = "Name of HCP Terraform Organization."
 }
 
 variable "tfe_workspace" {
   type        = string
-  description = "Name of Terraform Cloud Workspace."
+  description = "Name of HCP Terraform Workspace."
 }
 
 variable "vmss_additional_caps_ultra_ssd_enabled" {
