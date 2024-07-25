@@ -22,13 +22,13 @@
 - Microsoft Azure [Account](https://azure.microsoft.com/free)
 - HashiCorp Cloud Platform (HCP) [Account](https://portal.cloud.hashicorp.com/sign-in).
 - HashiCorp Terraform Cloud [Account](https://app.terraform.io/session)
-- HashiCorp Terraform `1.6.x` or [newer](https://developer.hashicorp.com/terraform/downloads)
+- HashiCorp Terraform `1.9.x` or [newer](https://developer.hashicorp.com/terraform/downloads)
 
 ### Development
 
 For development and testing of this repository:
 
-- `terraform-docs` `0.17.0` or [newer](https://terraform-docs.io/user-guide/installation/)
+- `terraform-docs` `0.18.0` or [newer](https://terraform-docs.io/user-guide/installation/)
 
 ## Usage
 
