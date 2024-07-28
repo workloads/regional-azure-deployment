@@ -39,9 +39,9 @@ module "main" {
   }
 
   tags = {
-    "github:url"                   = "https://github.com/workloads/regional-azure-deployment"
-    "terraform-cloud:organization" = var.tfe_organization
-    "terraform-cloud:workspace"    = var.tfe_workspace
+    "github:url"                 = "https://github.com/workloads/regional-azure-deployment"
+    "hcp-terraform:organization" = var.tfe_organization
+    "hcp-terraform:workspace"    = var.tfe_workspace
   }
 
   tenant_id        = var.tenant_id
@@ -52,4 +52,3 @@ module "main" {
   vmss_user_data   = filebase64("${path.module}/files/user-data.sh")
   vmss_username    = "workloads"
 }
-

@@ -29,8 +29,8 @@ For a list of available inputs and outputs, the [Readme document](../../README.m
 | location | Azure Resource Location. | `string` | yes |
 | project_identifier | Human-readable Project Identifier. | `string` | yes |
 | tenant_id | Identifier of Azure Tenant. | `string` | yes |
-| tfe_organization | Name of Terraform Cloud Organization. | `string` | yes |
-| tfe_workspace | Name of Terraform Cloud Workspace. | `string` | yes |
+| tfe_organization | Name of HCP Terraform Organization. | `string` | yes |
+| tfe_workspace | Name of HCP Terraform Workspace. | `string` | yes |
 
 ### Outputs
 
